@@ -6,7 +6,7 @@ printf("Insert your string here: ");
 gets(str);
 
 redeclear:
-printf("\n\nWhat you want to count?\n1) All Character. \n2) Word. \n3) Sentence.\n4) Alphabet.\n5) Vowel.\n6) Consonant. \n7) Special Character. \n8) Number. \n9) Uppercase. \n10) Lowercase.");
+printf("\n\nWhat you want to count?\n1) All Character. \n2) Word. \n3) Sentence.\n4) Alphabet.\n5) Vowel.\n6) Consonant. \n7) Special Character. \n8) Number. \n9) Uppercase. \n10) Lowercase. \n00) *Cancel.");
 printf("\n\n Input Here: ");
 scanf("%d", &option);
 
@@ -51,6 +51,8 @@ case 10: {
     for(i=0 ; str[i]!='\0'; i++)if(str[i]>='A' && str[i]<='Z') count++;break;
 }
 
+case 00: goto cancel;
+
 default: printf("\n\n>>>>>>>>Invalid Input...\n>>>>>>>>Try Again...\n\n"); goto redeclear;
 }
 
@@ -60,4 +62,6 @@ printf("***Want to count again?\n 1) YES\t\t 2) No \nInput Here: ");
 scanf("%d",&option);
 if(option==1)goto redeclear;
 else printf("\n\n<<<<< See You Again... >>>>>");
+
+cancel: printf("\n\n<<<<< See You Again... >>>>>");
 }
